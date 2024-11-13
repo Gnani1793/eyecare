@@ -1,0 +1,57 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f7e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Headings */
+h2 {
+    color: #3c763d;
+    text-align: center;
+}
+
+/* Form, Login, and Receipt Containers */
+.form-container, .login-container, .receipt-container {
+    background-color: #f0fff0; /* Light green background */
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px; /* Increased width */
+    box-shadow: 0 0 15px rgba(0, 128, 0, 0.1);
+    margin: 10px auto;
+}
+
+/* Labels */
+label {
+    color: #3c763d;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* Inputs, Selects, and Buttons */
+input, select, button {
+    width: calc(100% - 16px); /* Ensures same length for all inputs */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #3c763d;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+/* Button Styling */
+button {
+    background-color: #3c763d;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2b542c;
+}
