@@ -2,15 +2,171 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Receipt - Sri Satya Eye Care</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Receipt - Sri Satya Eye Care and Opticals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .receipt-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            animation: slideInFromTop 1.2s ease-out;
+        }
+
+        h3 {
+            text-align: center;
+            color: #16a085;
+            margin-bottom: 20px;
+            animation: slideInFromTop 1.4s ease-out;
+        }
+
+        p {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .divider {
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .details div {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            color: #34495e;
+            margin: 10px 0;
+            animation: slideInFromLeft 1s ease-in-out;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+            animation: fadeIn 1.8s ease-in-out;
+        }
+
+        button {
+            background-color: #16a085;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1abc9c;
+        }
+
+        button:last-child {
+            background-color: #2c3e50;
+        }
+
+        button:last-child:hover {
+            background-color: #34495e;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="receipt-container">
-        <h2>Receipt</h2>
-        <p>Thank you for submitting the patient details!</p>
-        <button onclick="window.print()">Print</button>
-        <button onclick="window.location.href='index.html'">Back to Login</button>
+        <h1>Sri Satya Eye Care and Opticals</h1>
+        <h3>Receipt</h3>
+        <p>Thank you for choosing our service. Below are the details of the patient:</p>
+        <div class="divider"></div>
+
+        <!-- Patient Details -->
+        <div class="details">
+            <div><strong>Name:</strong> <span id="name"></span></div>
+            <div><strong>Gender:</strong> <span id="gender"></span></div>
+            <div><strong>Exam Date:</strong> <span id="examDate"></span></div>
+            <div><strong>Address:</strong> <span id="address"></span></div>
+            <div><strong>MR Number:</strong> <span id="mrNo"></span></div>
+            <div><strong>Mobile Number:</strong> <span id="mobileNo"></span></div>
+            <div><strong>Age:</strong> <span id="age"></span></div>
+            <div><strong>Chief Complaint:</strong> <span id="complaint"></span></div>
+            <div><strong>Right Eye Power:</strong> <span id="rightEyePower"></span></div>
+            <div><strong>Left Eye Power:</strong> <span id="leftEyePower"></span></div>
+            <div><strong>Add Power:</strong> <span id="addPower"></span></div>
+            <div><strong>Diagnosis:</strong> <span id="diagnosis"></span></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+            <button onclick="window.print()">Print</button>
+            <button onclick="window.location.href='patientForm.html'">New Patient</button>
+        </div>
     </div>
+
+    <script>
+        // Extract query parameters from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('name').textContent = urlParams.get('name') || '-';
+        document.getElementById('gender').textContent = urlParams.get('gender') || '-';
+        document.getElementById('examDate').textContent = urlParams.get('examDate') || '-';
+        document.getElementById('address').textContent = urlParams.get('address') || '-';
+        document.getElementById('mrNo').textContent = urlParams.get('mrNo') || '-';
+        document.getElementById('mobileNo').textContent = urlParams.get('mobileNo') || '-';
+        document.getElementById('age').textContent = urlParams.get('age') || '-';
+        document.getElementById('complaint').textContent = urlParams.get('complaint') || '-';
+        document.getElementById('rightEyePower').textContent = urlParams.get('rightEyePower') || '-';
+        document.getElementById('leftEyePower').textContent = urlParams.get('leftEyePower') || '-';
+        document.getElementById('addPower').textContent = urlParams.get('addPower') || '-';
+        document.getElementById('diagnosis').textContent = urlParams.get('diagnosis') || '-';
+    </script>
 </body>
 </html>
